@@ -1,0 +1,22 @@
+#!/usr/bin/python
+
+import sys
+import os
+
+arg = sys.argv[1]
+
+def exit_arg(arg):
+    options = {
+            "lock": lambda: os.system("i3lock"),
+            "reboot": lambda: os.system("systemctl reboot"),
+            "shutdown": lambda: os.system("systemctl poweroff"),
+            "suspend": lambda: os.system("systemctl suspend")}  
+   
+    if arg in options:
+        return options.get(arg)
+    else:
+        return lambda: print("error: unknown option") 
+
+exitcmd = exit_arg(arg)
+exitcmd()
+
