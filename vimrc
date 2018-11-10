@@ -14,7 +14,7 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
-Plug 'davidhalter/jedi-vim'
+Plug 'zchee/deoplete-jedi'
 " Initialize plugin system
 call plug#end()
 set laststatus=2
